@@ -8,6 +8,6 @@ pub fn main() {
     for country in countries {
         // let num : usize = country.num.parse().unwrap();
         // println!("(\"{}\",  Country::{}),", country.alpha2, country.alpha2);
-        println!("{} => \"{}\",", country.alpha2, country.name);
+        println!("\"{}\" => {},", country.name, country.alpha2);
     }
 }
