@@ -1,0 +1,10 @@
+[package]
+name = "iso_country"
+version = "0.1.0"
+authors = ["Piotr Zolnierek <pzolnierek@gmail.com>"]
+license = "MIT"
+description = "ISO3166-1 countries"
+homepage = "https://github.com/pzol/iso_country"
+repository = "https://github.com/pzol/iso_country"
+
+[dependencies]
