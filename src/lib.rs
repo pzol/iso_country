@@ -7,8 +7,12 @@
 // |
 // | - [Wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1)
 
+#[cfg(feature = "serde")]
+extern crate serde;
+
 use std::{ fmt, str };
 use std::error::Error;
+
 pub mod data;
 
 #[derive(Debug)]
@@ -820,6 +824,45 @@ pub enum Country {
     ZW = 716,
 }
 
+#[cfg(feature = "serde")]
+impl serde::Serialize for Country {
+   fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error> where S: serde::Serializer
+   {
+       let code = COUNTRY_CODE_SEARCH_TABLE.binary_search_by(|&(_, s)| s.cmp(self))
+           .map(|pos| COUNTRY_CODE_SEARCH_TABLE[pos].0);
+       let code = code.expect("impossible happened!");
+       serializer.serialize_str(code)
+   }
+}
+
+#[cfg(feature = "serde")]
+impl<'de> serde::Deserialize<'de> for Country {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error> where D: serde::Deserializer<'de> {
+      use serde::de::Visitor;
+      use serde::de::Unexpected;
+      use std::fmt;
+      use std::str::FromStr;
+      struct CountryVisitor;
+
+      impl <'de> Visitor<'de> for CountryVisitor {
+            type Value = Country;
+
+            fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                  formatter.write_str("valid 2 letter country code")
+            }
+
+            fn visit_str<E>(self, value: &str) -> Result<Country, E> where E: serde::de::Error {
+                  match Country::from_str(value) {
+                        Ok(country) => Ok(country),
+                        Err(_) => Err(E::invalid_value(Unexpected::Str(value), &"2 letter country code")),
+                  }
+            }
+      }
+
+      deserializer.deserialize_str(CountryVisitor)
+    }
+}
+
 const COUNTRY_CODE_SEARCH_TABLE : &'static [(&'static str, Country)] = &[
     ("",    Country::Unspecified),
     ("AD",  Country::AD),
@@ -1076,6 +1119,7 @@ const COUNTRY_CODE_SEARCH_TABLE : &'static [(&'static str, Country)] = &[
 
 #[cfg(test)]
 mod tests {
+    extern crate serde_json;
     use super::Country;
 
     macro_rules! assert_s {
@@ -1096,5 +1140,13 @@ mod tests {
     fn name() {
         assert_eq!("Poland", Country::PL.name());
         assert_eq!("", Country::Unspecified.name());
+    }
+
+    #[test]
+    #[cfg(feature = "serde")]
+    fn test_serde() {
+        let a = Country::RU;
+        assert_eq!(&serde_json::to_string(&a).unwrap(), "\"RU\"");
+        assert_eq!(a, serde_json::from_slice(b"\"RU\"").unwrap());
     }
 }
