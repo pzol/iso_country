@@ -1,6 +1,6 @@
 [package]
 name = "iso_country"
-version = "0.1.1"
+version = "0.1.3"
 authors = ["Piotr Zolnierek <pzolnierek@gmail.com>"]
 license = "MIT"
 description = "ISO3166-1 countries"
