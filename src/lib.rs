@@ -9,9 +9,12 @@
 
 #[cfg(feature = "serde")]
 extern crate serde;
+#[macro_use]
+extern crate lazy_static;
 
 use std::{ fmt, str };
 use std::error::Error;
+use std::collections::HashMap;
 
 pub mod data;
 
@@ -824,14 +827,26 @@ pub enum Country {
     ZW = 716,
 }
 
+lazy_static! {
+    static ref INVERTED_COUNTRY_CODES: HashMap<Country, &'static str> = {
+        let mut codes = HashMap::new();
+
+        for &(country_name, country_code) in COUNTRY_CODE_SEARCH_TABLE {
+            codes.insert(country_code, country_name);
+        }
+
+        codes
+    };
+}
+
 #[cfg(feature = "serde")]
 impl serde::Serialize for Country {
    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error> where S: serde::Serializer
    {
-       let code = COUNTRY_CODE_SEARCH_TABLE.binary_search_by(|&(_, s)| s.cmp(self))
-           .map(|pos| COUNTRY_CODE_SEARCH_TABLE[pos].0);
-       let code = code.expect("impossible happened!");
-       serializer.serialize_str(code)
+       let country_name = INVERTED_COUNTRY_CODES.get(self)
+           .ok_or_else(|| serde::ser::Error::custom("Impossible, since all variants have their country name"))?;
+
+       serializer.serialize_str(country_name)
    }
 }
 
@@ -1144,9 +1159,19 @@ mod tests {
 
     #[test]
     #[cfg(feature = "serde")]
-    fn test_serde() {
-        let a = Country::RU;
-        assert_eq!(&serde_json::to_string(&a).unwrap(), "\"RU\"");
-        assert_eq!(a, serde_json::from_slice(b"\"RU\"").unwrap());
+    fn serializes() {
+        assert_eq!(&serde_json::to_string(&Country::RU).unwrap(), "\"RU\"");
+        assert_eq!(&serde_json::to_string(&Country::PL).unwrap(), "\"PL\"");
+        assert_eq!(&serde_json::to_string(&Country::ES).unwrap(), "\"ES\"");
+        assert_eq!(&serde_json::to_string(&Country::IT).unwrap(), "\"IT\"");
+    }
+
+    #[test]
+    #[cfg(feature = "serde")]
+    fn deserializes() {
+        assert_eq!(Country::RU, serde_json::from_slice(b"\"RU\"").unwrap());
+        assert_eq!(Country::PL, serde_json::from_slice(b"\"PL\"").unwrap());
+        assert_eq!(Country::ES, serde_json::from_slice(b"\"ES\"").unwrap());
+        assert_eq!(Country::IT, serde_json::from_slice(b"\"IT\"").unwrap());
     }
 }
