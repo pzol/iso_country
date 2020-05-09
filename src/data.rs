@@ -16,16 +16,16 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "004",
     });
     codes.push(CountryCode {
+        alpha2: "AX",
+        alpha3: "ALA",
+        name: "Åland Islands",
+        num: "248",
+    });
+    codes.push(CountryCode {
         alpha2: "AL",
         alpha3: "ALB",
         name: "Albania",
         num: "008",
-    });
-    codes.push(CountryCode {
-        alpha2: "AQ",
-        alpha3: "ATA",
-        name: "Antarctica",
-        num: "010",
     });
     codes.push(CountryCode {
         alpha2: "DZ",
@@ -52,22 +52,40 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "024",
     });
     codes.push(CountryCode {
+        alpha2: "AI",
+        alpha3: "AIA",
+        name: "Anguilla",
+        num: "660",
+    });
+    codes.push(CountryCode {
+        alpha2: "AQ",
+        alpha3: "ATA",
+        name: "Antarctica",
+        num: "010",
+    });
+    codes.push(CountryCode {
         alpha2: "AG",
         alpha3: "ATG",
         name: "Antigua and Barbuda",
         num: "028",
     });
     codes.push(CountryCode {
-        alpha2: "AZ",
-        alpha3: "AZE",
-        name: "Azerbaijan",
-        num: "031",
-    });
-    codes.push(CountryCode {
         alpha2: "AR",
         alpha3: "ARG",
         name: "Argentina",
         num: "032",
+    });
+    codes.push(CountryCode {
+        alpha2: "AM",
+        alpha3: "ARM",
+        name: "Armenia",
+        num: "051",
+    });
+    codes.push(CountryCode {
+        alpha2: "AW",
+        alpha3: "ABW",
+        name: "Aruba",
+        num: "533",
     });
     codes.push(CountryCode {
         alpha2: "AU",
@@ -80,6 +98,12 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "AUT",
         name: "Austria",
         num: "040",
+    });
+    codes.push(CountryCode {
+        alpha2: "AZ",
+        alpha3: "AZE",
+        name: "Azerbaijan",
+        num: "031",
     });
     codes.push(CountryCode {
         alpha2: "BS",
@@ -100,22 +124,34 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "050",
     });
     codes.push(CountryCode {
-        alpha2: "AM",
-        alpha3: "ARM",
-        name: "Armenia",
-        num: "051",
-    });
-    codes.push(CountryCode {
         alpha2: "BB",
         alpha3: "BRB",
         name: "Barbados",
         num: "052",
     });
     codes.push(CountryCode {
+        alpha2: "BY",
+        alpha3: "BLR",
+        name: "Belarus",
+        num: "112",
+    });
+    codes.push(CountryCode {
         alpha2: "BE",
         alpha3: "BEL",
         name: "Belgium",
         num: "056",
+    });
+    codes.push(CountryCode {
+        alpha2: "BZ",
+        alpha3: "BLZ",
+        name: "Belize",
+        num: "084",
+    });
+    codes.push(CountryCode {
+        alpha2: "BJ",
+        alpha3: "BEN",
+        name: "Benin",
+        num: "204",
     });
     codes.push(CountryCode {
         alpha2: "BM",
@@ -134,6 +170,12 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "BOL",
         name: "Bolivia (Plurinational State of)",
         num: "068",
+    });
+    codes.push(CountryCode {
+        alpha2: "BQ",
+        alpha3: "BES",
+        name: "Bonaire, Sint Eustatius and Saba",
+        num: "535",
     });
     codes.push(CountryCode {
         alpha2: "BA",
@@ -160,28 +202,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "076",
     });
     codes.push(CountryCode {
-        alpha2: "BZ",
-        alpha3: "BLZ",
-        name: "Belize",
-        num: "084",
-    });
-    codes.push(CountryCode {
         alpha2: "IO",
         alpha3: "IOT",
         name: "British Indian Ocean Territory",
         num: "086",
-    });
-    codes.push(CountryCode {
-        alpha2: "SB",
-        alpha3: "SLB",
-        name: "Solomon Islands",
-        num: "090",
-    });
-    codes.push(CountryCode {
-        alpha2: "VG",
-        alpha3: "VGB",
-        name: "Virgin Islands (British)",
-        num: "092",
     });
     codes.push(CountryCode {
         alpha2: "BN",
@@ -196,10 +220,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "100",
     });
     codes.push(CountryCode {
-        alpha2: "MM",
-        alpha3: "MMR",
-        name: "Myanmar",
-        num: "104",
+        alpha2: "BF",
+        alpha3: "BFA",
+        name: "Burkina Faso",
+        num: "854",
     });
     codes.push(CountryCode {
         alpha2: "BI",
@@ -208,10 +232,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "108",
     });
     codes.push(CountryCode {
-        alpha2: "BY",
-        alpha3: "BLR",
-        name: "Belarus",
-        num: "112",
+        alpha2: "CV",
+        alpha3: "CPV",
+        name: "Cabo Verde",
+        num: "132",
     });
     codes.push(CountryCode {
         alpha2: "KH",
@@ -232,12 +256,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "124",
     });
     codes.push(CountryCode {
-        alpha2: "CV",
-        alpha3: "CPV",
-        name: "Cabo Verde",
-        num: "132",
-    });
-    codes.push(CountryCode {
         alpha2: "KY",
         alpha3: "CYM",
         name: "Cayman Islands",
@@ -248,12 +266,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "CAF",
         name: "Central African Republic",
         num: "140",
-    });
-    codes.push(CountryCode {
-        alpha2: "LK",
-        alpha3: "LKA",
-        name: "Sri Lanka",
-        num: "144",
     });
     codes.push(CountryCode {
         alpha2: "TD",
@@ -272,12 +284,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "CHN",
         name: "China",
         num: "156",
-    });
-    codes.push(CountryCode {
-        alpha2: "TW",
-        alpha3: "TWN",
-        name: "Taiwan, Province of China[a]",
-        num: "158",
     });
     codes.push(CountryCode {
         alpha2: "CX",
@@ -304,12 +310,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "174",
     });
     codes.push(CountryCode {
-        alpha2: "YT",
-        alpha3: "MYT",
-        name: "Mayotte",
-        num: "175",
-    });
-    codes.push(CountryCode {
         alpha2: "CG",
         alpha3: "COG",
         name: "Congo",
@@ -334,6 +334,12 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "188",
     });
     codes.push(CountryCode {
+        alpha2: "CI",
+        alpha3: "CIV",
+        name: "Côte d'Ivoire",
+        num: "384",
+    });
+    codes.push(CountryCode {
         alpha2: "HR",
         alpha3: "HRV",
         name: "Croatia",
@@ -346,6 +352,12 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "192",
     });
     codes.push(CountryCode {
+        alpha2: "CW",
+        alpha3: "CUW",
+        name: "Curaçao",
+        num: "531",
+    });
+    codes.push(CountryCode {
         alpha2: "CY",
         alpha3: "CYP",
         name: "Cyprus",
@@ -354,20 +366,20 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
     codes.push(CountryCode {
         alpha2: "CZ",
         alpha3: "CZE",
-        name: "Czech Republic",
+        name: "Czechia",
         num: "203",
-    });
-    codes.push(CountryCode {
-        alpha2: "BJ",
-        alpha3: "BEN",
-        name: "Benin",
-        num: "204",
     });
     codes.push(CountryCode {
         alpha2: "DK",
         alpha3: "DNK",
         name: "Denmark",
         num: "208",
+    });
+    codes.push(CountryCode {
+        alpha2: "DJ",
+        alpha3: "DJI",
+        name: "Djibouti",
+        num: "262",
     });
     codes.push(CountryCode {
         alpha2: "DM",
@@ -388,6 +400,12 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "218",
     });
     codes.push(CountryCode {
+        alpha2: "EG",
+        alpha3: "EGY",
+        name: "Egypt",
+        num: "818",
+    });
+    codes.push(CountryCode {
         alpha2: "SV",
         alpha3: "SLV",
         name: "El Salvador",
@@ -398,12 +416,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "GNQ",
         name: "Equatorial Guinea",
         num: "226",
-    });
-    codes.push(CountryCode {
-        alpha2: "ET",
-        alpha3: "ETH",
-        name: "Ethiopia",
-        num: "231",
     });
     codes.push(CountryCode {
         alpha2: "ER",
@@ -418,22 +430,28 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "233",
     });
     codes.push(CountryCode {
-        alpha2: "FO",
-        alpha3: "FRO",
-        name: "Faroe Islands",
-        num: "234",
+        alpha2: "SZ",
+        alpha3: "SWZ",
+        name: "Eswatini",
+        num: "748",
+    });
+    codes.push(CountryCode {
+        alpha2: "ET",
+        alpha3: "ETH",
+        name: "Ethiopia",
+        num: "231",
     });
     codes.push(CountryCode {
         alpha2: "FK",
         alpha3: "FLK",
-        name: "Falkland Islands",
+        name: "Falkland Islands (Malvinas)",
         num: "238",
     });
     codes.push(CountryCode {
-        alpha2: "GS",
-        alpha3: "SGS",
-        name: "South Georgia and the South Sandwich Islands",
-        num: "239",
+        alpha2: "FO",
+        alpha3: "FRO",
+        name: "Faroe Islands",
+        num: "234",
     });
     codes.push(CountryCode {
         alpha2: "FJ",
@@ -446,12 +464,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "FIN",
         name: "Finland",
         num: "246",
-    });
-    codes.push(CountryCode {
-        alpha2: "AX",
-        alpha3: "ALA",
-        name: "Åland Islands",
-        num: "248",
     });
     codes.push(CountryCode {
         alpha2: "FR",
@@ -478,22 +490,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "260",
     });
     codes.push(CountryCode {
-        alpha2: "DJ",
-        alpha3: "DJI",
-        name: "Djibouti",
-        num: "262",
-    });
-    codes.push(CountryCode {
         alpha2: "GA",
         alpha3: "GAB",
         name: "Gabon",
         num: "266",
-    });
-    codes.push(CountryCode {
-        alpha2: "GE",
-        alpha3: "GEO",
-        name: "Georgia",
-        num: "268",
     });
     codes.push(CountryCode {
         alpha2: "GM",
@@ -502,10 +502,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "270",
     });
     codes.push(CountryCode {
-        alpha2: "PS",
-        alpha3: "PSE",
-        name: "Palestine, State of",
-        num: "275",
+        alpha2: "GE",
+        alpha3: "GEO",
+        name: "Georgia",
+        num: "268",
     });
     codes.push(CountryCode {
         alpha2: "DE",
@@ -524,12 +524,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "GIB",
         name: "Gibraltar",
         num: "292",
-    });
-    codes.push(CountryCode {
-        alpha2: "KI",
-        alpha3: "KIR",
-        name: "Kiribati",
-        num: "296",
     });
     codes.push(CountryCode {
         alpha2: "GR",
@@ -568,10 +562,22 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "320",
     });
     codes.push(CountryCode {
+        alpha2: "GG",
+        alpha3: "GGY",
+        name: "Guernsey",
+        num: "831",
+    });
+    codes.push(CountryCode {
         alpha2: "GN",
         alpha3: "GIN",
         name: "Guinea",
         num: "324",
+    });
+    codes.push(CountryCode {
+        alpha2: "GW",
+        alpha3: "GNB",
+        name: "Guinea-Bissau",
+        num: "624",
     });
     codes.push(CountryCode {
         alpha2: "GY",
@@ -652,6 +658,12 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "372",
     });
     codes.push(CountryCode {
+        alpha2: "IM",
+        alpha3: "IMN",
+        name: "Isle of Man",
+        num: "833",
+    });
+    codes.push(CountryCode {
         alpha2: "IL",
         alpha3: "ISR",
         name: "Israel",
@@ -662,12 +674,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "ITA",
         name: "Italy",
         num: "380",
-    });
-    codes.push(CountryCode {
-        alpha2: "CI",
-        alpha3: "CIV",
-        name: "Côte d'Ivoire",
-        num: "384",
     });
     codes.push(CountryCode {
         alpha2: "JM",
@@ -682,10 +688,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "392",
     });
     codes.push(CountryCode {
-        alpha2: "KZ",
-        alpha3: "KAZ",
-        name: "Kazakhstan",
-        num: "398",
+        alpha2: "JE",
+        alpha3: "JEY",
+        name: "Jersey",
+        num: "832",
     });
     codes.push(CountryCode {
         alpha2: "JO",
@@ -694,10 +700,22 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "400",
     });
     codes.push(CountryCode {
+        alpha2: "KZ",
+        alpha3: "KAZ",
+        name: "Kazakhstan",
+        num: "398",
+    });
+    codes.push(CountryCode {
         alpha2: "KE",
         alpha3: "KEN",
         name: "Kenya",
         num: "404",
+    });
+    codes.push(CountryCode {
+        alpha2: "KI",
+        alpha3: "KIR",
+        name: "Kiribati",
+        num: "296",
     });
     codes.push(CountryCode {
         alpha2: "KP",
@@ -730,6 +748,12 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "418",
     });
     codes.push(CountryCode {
+        alpha2: "LV",
+        alpha3: "LVA",
+        name: "Latvia",
+        num: "428",
+    });
+    codes.push(CountryCode {
         alpha2: "LB",
         alpha3: "LBN",
         name: "Lebanon",
@@ -740,12 +764,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "LSO",
         name: "Lesotho",
         num: "426",
-    });
-    codes.push(CountryCode {
-        alpha2: "LV",
-        alpha3: "LVA",
-        name: "Latvia",
-        num: "428",
     });
     codes.push(CountryCode {
         alpha2: "LR",
@@ -820,6 +838,12 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "470",
     });
     codes.push(CountryCode {
+        alpha2: "MH",
+        alpha3: "MHL",
+        name: "Marshall Islands",
+        num: "584",
+    });
+    codes.push(CountryCode {
         alpha2: "MQ",
         alpha3: "MTQ",
         name: "Martinique",
@@ -838,10 +862,28 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "480",
     });
     codes.push(CountryCode {
+        alpha2: "YT",
+        alpha3: "MYT",
+        name: "Mayotte",
+        num: "175",
+    });
+    codes.push(CountryCode {
         alpha2: "MX",
         alpha3: "MEX",
         name: "Mexico",
         num: "484",
+    });
+    codes.push(CountryCode {
+        alpha2: "FM",
+        alpha3: "FSM",
+        name: "Micronesia (Federated States of)",
+        num: "583",
+    });
+    codes.push(CountryCode {
+        alpha2: "MD",
+        alpha3: "MDA",
+        name: "Moldova (Republic of)",
+        num: "498",
     });
     codes.push(CountryCode {
         alpha2: "MC",
@@ -854,12 +896,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "MNG",
         name: "Mongolia",
         num: "496",
-    });
-    codes.push(CountryCode {
-        alpha2: "MD",
-        alpha3: "MDA",
-        name: "Moldova (Republic of)",
-        num: "498",
     });
     codes.push(CountryCode {
         alpha2: "ME",
@@ -886,10 +922,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "508",
     });
     codes.push(CountryCode {
-        alpha2: "OM",
-        alpha3: "OMN",
-        name: "Oman",
-        num: "512",
+        alpha2: "MM",
+        alpha3: "MMR",
+        name: "Myanmar",
+        num: "104",
     });
     codes.push(CountryCode {
         alpha2: "NA",
@@ -916,40 +952,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "528",
     });
     codes.push(CountryCode {
-        alpha2: "CW",
-        alpha3: "CUW",
-        name: "Curaçao",
-        num: "531",
-    });
-    codes.push(CountryCode {
-        alpha2: "AW",
-        alpha3: "ABW",
-        name: "Aruba",
-        num: "533",
-    });
-    codes.push(CountryCode {
-        alpha2: "SX",
-        alpha3: "SXM",
-        name: "Sint Maarten (Dutch part)",
-        num: "534",
-    });
-    codes.push(CountryCode {
-        alpha2: "BQ",
-        alpha3: "BES",
-        name: "Bonaire, Sint Eustatius and Saba",
-        num: "535",
-    });
-    codes.push(CountryCode {
         alpha2: "NC",
         alpha3: "NCL",
         name: "New Caledonia",
         num: "540",
-    });
-    codes.push(CountryCode {
-        alpha2: "VU",
-        alpha3: "VUT",
-        name: "Vanuatu",
-        num: "548",
     });
     codes.push(CountryCode {
         alpha2: "NZ",
@@ -988,10 +994,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "574",
     });
     codes.push(CountryCode {
-        alpha2: "NO",
-        alpha3: "NOR",
-        name: "Norway",
-        num: "578",
+        alpha2: "MK",
+        alpha3: "MKD",
+        name: "North Macedonia",
+        num: "807",
     });
     codes.push(CountryCode {
         alpha2: "MP",
@@ -1000,22 +1006,22 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "580",
     });
     codes.push(CountryCode {
-        alpha2: "UM",
-        alpha3: "UMI",
-        name: "United States Minor Outlying Islands",
-        num: "581",
+        alpha2: "NO",
+        alpha3: "NOR",
+        name: "Norway",
+        num: "578",
     });
     codes.push(CountryCode {
-        alpha2: "FM",
-        alpha3: "FSM",
-        name: "Micronesia (Federated States of)",
-        num: "583",
+        alpha2: "OM",
+        alpha3: "OMN",
+        name: "Oman",
+        num: "512",
     });
     codes.push(CountryCode {
-        alpha2: "MH",
-        alpha3: "MHL",
-        name: "Marshall Islands",
-        num: "584",
+        alpha2: "PK",
+        alpha3: "PAK",
+        name: "Pakistan",
+        num: "586",
     });
     codes.push(CountryCode {
         alpha2: "PW",
@@ -1024,10 +1030,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "585",
     });
     codes.push(CountryCode {
-        alpha2: "PK",
-        alpha3: "PAK",
-        name: "Pakistan",
-        num: "586",
+        alpha2: "PS",
+        alpha3: "PSE",
+        name: "Palestine (State of)",
+        num: "275",
     });
     codes.push(CountryCode {
         alpha2: "PA",
@@ -1076,18 +1082,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "PRT",
         name: "Portugal",
         num: "620",
-    });
-    codes.push(CountryCode {
-        alpha2: "GW",
-        alpha3: "GNB",
-        name: "Guinea-Bissau",
-        num: "624",
-    });
-    codes.push(CountryCode {
-        alpha2: "TL",
-        alpha3: "TLS",
-        name: "Timor-Leste",
-        num: "626",
     });
     codes.push(CountryCode {
         alpha2: "PR",
@@ -1144,12 +1138,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "659",
     });
     codes.push(CountryCode {
-        alpha2: "AI",
-        alpha3: "AIA",
-        name: "Anguilla",
-        num: "660",
-    });
-    codes.push(CountryCode {
         alpha2: "LC",
         alpha3: "LCA",
         name: "Saint Lucia",
@@ -1172,6 +1160,12 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "VCT",
         name: "Saint Vincent and the Grenadines",
         num: "670",
+    });
+    codes.push(CountryCode {
+        alpha2: "WS",
+        alpha3: "WSM",
+        name: "Samoa",
+        num: "882",
     });
     codes.push(CountryCode {
         alpha2: "SM",
@@ -1222,22 +1216,28 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "702",
     });
     codes.push(CountryCode {
+        alpha2: "SX",
+        alpha3: "SXM",
+        name: "Sint Maarten (Dutch part)",
+        num: "534",
+    });
+    codes.push(CountryCode {
         alpha2: "SK",
         alpha3: "SVK",
         name: "Slovakia",
         num: "703",
     });
     codes.push(CountryCode {
-        alpha2: "VN",
-        alpha3: "VNM",
-        name: "Viet Nam",
-        num: "704",
-    });
-    codes.push(CountryCode {
         alpha2: "SI",
         alpha3: "SVN",
         name: "Slovenia",
         num: "705",
+    });
+    codes.push(CountryCode {
+        alpha2: "SB",
+        alpha3: "SLB",
+        name: "Solomon Islands",
+        num: "090",
     });
     codes.push(CountryCode {
         alpha2: "SO",
@@ -1252,16 +1252,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "710",
     });
     codes.push(CountryCode {
-        alpha2: "ZW",
-        alpha3: "ZWE",
-        name: "Zimbabwe",
-        num: "716",
-    });
-    codes.push(CountryCode {
-        alpha2: "ES",
-        alpha3: "ESP",
-        name: "Spain",
-        num: "724",
+        alpha2: "GS",
+        alpha3: "SGS",
+        name: "South Georgia and the South Sandwich Islands",
+        num: "239",
     });
     codes.push(CountryCode {
         alpha2: "SS",
@@ -1270,16 +1264,22 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "728",
     });
     codes.push(CountryCode {
+        alpha2: "ES",
+        alpha3: "ESP",
+        name: "Spain",
+        num: "724",
+    });
+    codes.push(CountryCode {
+        alpha2: "LK",
+        alpha3: "LKA",
+        name: "Sri Lanka",
+        num: "144",
+    });
+    codes.push(CountryCode {
         alpha2: "SD",
         alpha3: "SDN",
         name: "Sudan",
         num: "729",
-    });
-    codes.push(CountryCode {
-        alpha2: "EH",
-        alpha3: "ESH",
-        name: "Western Sahara",
-        num: "732",
     });
     codes.push(CountryCode {
         alpha2: "SR",
@@ -1292,12 +1292,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "SJM",
         name: "Svalbard and Jan Mayen",
         num: "744",
-    });
-    codes.push(CountryCode {
-        alpha2: "SZ",
-        alpha3: "SWZ",
-        name: "Swaziland",
-        num: "748",
     });
     codes.push(CountryCode {
         alpha2: "SE",
@@ -1318,16 +1312,34 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "760",
     });
     codes.push(CountryCode {
+        alpha2: "TW",
+        alpha3: "TWN",
+        name: "Taiwan (Province of China)",
+        num: "158",
+    });
+    codes.push(CountryCode {
         alpha2: "TJ",
         alpha3: "TJK",
         name: "Tajikistan",
         num: "762",
     });
     codes.push(CountryCode {
+        alpha2: "TZ",
+        alpha3: "TZA",
+        name: "Tanzania (United Republic of)",
+        num: "834",
+    });
+    codes.push(CountryCode {
         alpha2: "TH",
         alpha3: "THA",
         name: "Thailand",
         num: "764",
+    });
+    codes.push(CountryCode {
+        alpha2: "TL",
+        alpha3: "TLS",
+        name: "Timor-Leste",
+        num: "626",
     });
     codes.push(CountryCode {
         alpha2: "TG",
@@ -1352,12 +1364,6 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "TTO",
         name: "Trinidad and Tobago",
         num: "780",
-    });
-    codes.push(CountryCode {
-        alpha2: "AE",
-        alpha3: "ARE",
-        name: "United Arab Emirates",
-        num: "784",
     });
     codes.push(CountryCode {
         alpha2: "TN",
@@ -1402,16 +1408,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "804",
     });
     codes.push(CountryCode {
-        alpha2: "MK",
-        alpha3: "MKD",
-        name: "Macedonia (the former Yugoslav Republic of)",
-        num: "807",
-    });
-    codes.push(CountryCode {
-        alpha2: "EG",
-        alpha3: "EGY",
-        name: "Egypt",
-        num: "818",
+        alpha2: "AE",
+        alpha3: "ARE",
+        name: "United Arab Emirates",
+        num: "784",
     });
     codes.push(CountryCode {
         alpha2: "GB",
@@ -1420,46 +1420,16 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "826",
     });
     codes.push(CountryCode {
-        alpha2: "GG",
-        alpha3: "GGY",
-        name: "Guernsey",
-        num: "831",
-    });
-    codes.push(CountryCode {
-        alpha2: "JE",
-        alpha3: "JEY",
-        name: "Jersey",
-        num: "832",
-    });
-    codes.push(CountryCode {
-        alpha2: "IM",
-        alpha3: "IMN",
-        name: "Isle of Man",
-        num: "833",
-    });
-    codes.push(CountryCode {
-        alpha2: "TZ",
-        alpha3: "TZA",
-        name: "Tanzania, United Republic of",
-        num: "834",
-    });
-    codes.push(CountryCode {
         alpha2: "US",
         alpha3: "USA",
         name: "United States of America",
         num: "840",
     });
     codes.push(CountryCode {
-        alpha2: "VI",
-        alpha3: "VIR",
-        name: "Virgin Islands (U.S.)",
-        num: "850",
-    });
-    codes.push(CountryCode {
-        alpha2: "BF",
-        alpha3: "BFA",
-        name: "Burkina Faso",
-        num: "854",
+        alpha2: "UM",
+        alpha3: "UMI",
+        name: "United States Minor Outlying Islands",
+        num: "581",
     });
     codes.push(CountryCode {
         alpha2: "UY",
@@ -1474,10 +1444,34 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "860",
     });
     codes.push(CountryCode {
+        alpha2: "VU",
+        alpha3: "VUT",
+        name: "Vanuatu",
+        num: "548",
+    });
+    codes.push(CountryCode {
         alpha2: "VE",
         alpha3: "VEN",
         name: "Venezuela (Bolivarian Republic of)",
         num: "862",
+    });
+    codes.push(CountryCode {
+        alpha2: "VN",
+        alpha3: "VNM",
+        name: "Viet Nam",
+        num: "704",
+    });
+    codes.push(CountryCode {
+        alpha2: "VG",
+        alpha3: "VGB",
+        name: "Virgin Islands (British)",
+        num: "092",
+    });
+    codes.push(CountryCode {
+        alpha2: "VI",
+        alpha3: "VIR",
+        name: "Virgin Islands (U.S.)",
+        num: "850",
     });
     codes.push(CountryCode {
         alpha2: "WF",
@@ -1486,10 +1480,10 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         num: "876",
     });
     codes.push(CountryCode {
-        alpha2: "WS",
-        alpha3: "WSM",
-        name: "Samoa",
-        num: "882",
+        alpha2: "EH",
+        alpha3: "ESH",
+        name: "Western Sahara",
+        num: "732",
     });
     codes.push(CountryCode {
         alpha2: "YE",
@@ -1502,6 +1496,12 @@ pub fn all<'a>() -> Vec<CountryCode<'a>> {
         alpha3: "ZMB",
         name: "Zambia",
         num: "894",
+    });
+    codes.push(CountryCode {
+        alpha2: "ZW",
+        alpha3: "ZWE",
+        name: "Zimbabwe",
+        num: "716",
     });
     // End
 
