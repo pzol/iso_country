@@ -54,9 +54,9 @@ impl fmt::Display for Country  {
 }
 
 impl Country {
-    pub fn name(&self) -> &'static str {
+    pub fn name(self) -> &'static str {
         use Country::*;
-        match *self {
+        match self {
             Unspecified => "",
             AD => "Andorra",
             AE => "United Arab Emirates",
@@ -878,7 +878,7 @@ impl<'de> serde::Deserialize<'de> for Country {
     }
 }
 
-const COUNTRY_CODE_SEARCH_TABLE : &'static [(&'static str, Country)] = &[
+const COUNTRY_CODE_SEARCH_TABLE : &[(&str, Country)] = &[
     ("",    Country::Unspecified),
     ("AD",  Country::AD),
     ("AE",  Country::AE),
