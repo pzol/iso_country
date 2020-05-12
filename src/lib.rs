@@ -17,9 +17,8 @@ use std::{ fmt, str };
 use std::error::Error;
 use std::collections::HashMap;
 
-pub mod data;
-
 include!(concat!(env!("OUT_DIR"), "/isodata.rs"));
+include!(concat!(env!("OUT_DIR"), "/data.rs"));
 
 #[derive(Debug)]
 pub enum CountryParseError {

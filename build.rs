@@ -79,8 +79,36 @@ fn write_enum_impl(file: &mut BufWriter<File>, data: &IsoData) {
     writeln!(file, "}}").unwrap();
 }
 
+fn write_data_mod(file: &mut BufWriter<File>, data: &IsoData) {
+    writeln!(file, "pub mod data {{").unwrap();
+
+    writeln!(file, "pub struct CountryCode<'a> {{").unwrap();
+    writeln!(file, "    pub alpha2: &'a str,").unwrap();
+    writeln!(file, "    pub alpha3: &'a str,").unwrap();
+    writeln!(file, "    pub name: &'a str,").unwrap();
+    writeln!(file, "    pub num: &'a str,").unwrap();
+    writeln!(file, "}}").unwrap();
+    
+    
+    writeln!(file, "pub fn all<'a>() -> Vec<CountryCode<'a>> {{").unwrap();
+    writeln!(file, "    let mut codes: Vec<CountryCode> = vec![];").unwrap();
+    for &(ref alpha2, ref alpha3, ref name, ref num) in data.iter() {
+        writeln!(file, "    codes.push(CountryCode {{").unwrap();
+        writeln!(file, "        alpha2: \"{}\",", alpha2).unwrap();
+        writeln!(file, "        alpha3: \"{}\",", alpha3).unwrap();
+        writeln!(file, "        name: \"{}\",", name).unwrap();
+        writeln!(file, "        num: \"{}\",", num).unwrap();
+        writeln!(file, "    }});").unwrap();
+    }
+    writeln!(file, "    codes").unwrap();
+    writeln!(file, "}}").unwrap();
+
+    writeln!(file, "}}").unwrap();
+}
+
 fn main() {
     let out_path = Path::new(&env::var("OUT_DIR").unwrap()).join("isodata.rs");
+    let data_mod_out_path = Path::new(&env::var("OUT_DIR").unwrap()).join("data.rs");
 
     let isodata = read_table();
 
@@ -89,5 +117,8 @@ fn main() {
         write_enum(&mut file, &isodata);
         write_country_code_search_table(&mut file, &isodata);
         write_enum_impl(&mut file, &isodata);
+
+        let mut file = BufWriter::new(File::create(&data_mod_out_path).expect("Couldn't write to output file for data module"));
+        write_data_mod(&mut file, &isodata);
     }
 }
