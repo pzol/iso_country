@@ -7,14 +7,20 @@
 // |
 // | - [Wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1)
 
+#![cfg_attr(not(feature = "std"), no_std)]
+
+extern crate alloc;
+#[cfg(feature = "std")]
+extern crate core;
 #[cfg(feature = "serde")]
 extern crate serde;
-#[macro_use]
-extern crate lazy_static;
 
-use std::{ fmt, str };
+use alloc::string::{String, ToString};
+use core::{fmt, str};
+#[cfg(not(feature = "std"))]
+use core::error::Error;
+#[cfg(feature = "std")]
 use std::error::Error;
-use std::collections::HashMap;
 
 pub mod data;
 
@@ -827,26 +833,16 @@ pub enum Country {
     ZW = 716,
 }
 
-lazy_static! {
-    static ref INVERTED_COUNTRY_CODES: HashMap<Country, &'static str> = {
-        let mut codes = HashMap::new();
-
-        for &(country_name, country_code) in COUNTRY_CODE_SEARCH_TABLE {
-            codes.insert(country_code, country_name);
-        }
-
-        codes
-    };
-}
-
 #[cfg(feature = "serde")]
 impl serde::Serialize for Country {
    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error> where S: serde::Serializer
    {
-       let country_name = INVERTED_COUNTRY_CODES.get(self)
-           .ok_or_else(|| serde::ser::Error::custom("Impossible, since all variants have their country name"))?;
+       let code = COUNTRY_CODE_SEARCH_TABLE.iter()
+           .find(|&&(_, country)| country == *self)
+           .map(|&(code, _)| code)
+           .ok_or_else(|| serde::ser::Error::custom("Impossible, since all variants have their country code"))?;
 
-       serializer.serialize_str(country_name)
+       serializer.serialize_str(code)
    }
 }
 
@@ -855,8 +851,8 @@ impl<'de> serde::Deserialize<'de> for Country {
     fn deserialize<D>(deserializer: D) -> Result<Self, D::Error> where D: serde::Deserializer<'de> {
       use serde::de::Visitor;
       use serde::de::Unexpected;
-      use std::fmt;
-      use std::str::FromStr;
+      use core::fmt;
+      use core::str::FromStr;
       struct CountryVisitor;
 
       impl <'de> Visitor<'de> for CountryVisitor {
@@ -1173,5 +1169,15 @@ mod tests {
         assert_eq!(Country::PL, serde_json::from_slice(b"\"PL\"").unwrap());
         assert_eq!(Country::ES, serde_json::from_slice(b"\"ES\"").unwrap());
         assert_eq!(Country::IT, serde_json::from_slice(b"\"IT\"").unwrap());
+    }
+
+    #[test]
+    #[cfg(feature = "serde")]
+    fn round_trips_every_country() {
+        for &(code, country) in super::COUNTRY_CODE_SEARCH_TABLE {
+            let json = serde_json::to_string(&country).unwrap();
+            assert_eq!(json, format!("\"{}\"", code));
+            assert_eq!(country, serde_json::from_str::<Country>(&json).unwrap());
+        }
     }
 }
