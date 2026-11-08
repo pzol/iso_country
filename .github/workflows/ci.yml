@@ -1,0 +1,22 @@
+name: CI
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: cargo test
+      - run: cargo test --features serde
+
+  no_std:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: rustup target add thumbv7em-none-eabihf
+      - run: cargo build --target thumbv7em-none-eabihf --no-default-features
+      - run: cargo build --target thumbv7em-none-eabihf --no-default-features --features serde

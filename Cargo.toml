@@ -6,10 +6,14 @@ license = "MIT"
 description = "ISO3166-1 countries"
 homepage = "https://github.com/pzol/iso_country"
 repository = "https://github.com/pzol/iso_country"
+resolver = "2"
+
+[features]
+default = ["std"]
+std = []
 
 [dependencies]
-serde = { version = "1", optional = true }
-lazy_static = "1.1.0"
+serde = { version = "1", optional = true, default-features = false }
 
 [dev-dependencies]
 serde_json = "1"

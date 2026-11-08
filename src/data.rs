@@ -1,3 +1,5 @@
+use alloc::vec::Vec;
+
 pub struct CountryCode<'a> {
     pub alpha2: &'a str,
     pub alpha3: &'a str,
@@ -6,7 +8,7 @@ pub struct CountryCode<'a> {
 }
 
 pub fn all<'a>() -> Vec<CountryCode<'a>> {
-    let mut codes: Vec<CountryCode> = vec![];
+    let mut codes: Vec<CountryCode> = Vec::new();
 
     // Begin
     codes.push(CountryCode {
